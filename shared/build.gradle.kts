@@ -42,6 +42,13 @@ kotlin {
                 //md5
                 implementation("com.squareup.okio:okio:3.1.0")
 
+                //Corrutinas
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2-native-mt"){
+                    version{
+                        strictly("1.5.2-native-mt")
+                    }
+                }
+
                 //Enlace Serialization-Ktor
                 implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
                 implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")

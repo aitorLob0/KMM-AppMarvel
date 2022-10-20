@@ -23,10 +23,20 @@ class CharactersViewModel(
 
     init {
         viewModelScope.launch(coroutineExceptionHandler) {
+                val list = charactersService.
+                getCharacters()
+                _screenState.value = ScreenState.ShowCharacters(list)
+        /*runCatching{
+
+        }.onSuccess{
+
+            }.onFailure{
+
+            }
             val list = charactersService.
             getCharacters()
             _screenState.value = ScreenState.ShowCharacters(list)
-        }
+        }*/
     }
 
 }
