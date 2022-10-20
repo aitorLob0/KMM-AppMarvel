@@ -35,8 +35,8 @@ class CharactersViewModel(
             }
             val list = charactersService.
             getCharacters()
-            _screenState.value = ScreenState.ShowCharacters(list)
-        }*/
+            _screenState.value = ScreenState.ShowCharacters(list)*/
+        }
     }
 
 }
