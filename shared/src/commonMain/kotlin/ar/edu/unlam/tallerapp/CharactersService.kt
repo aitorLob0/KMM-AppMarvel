@@ -19,7 +19,7 @@ class CharactersService{
         return sort(characters.toModel())
     }
 
-    private fun sort(characters: List<Character>): List<Character> {
+    fun sort(characters: List<Character>): List<Character> {
         return characters.sortedWith(CharacterComparator())
     }
 
@@ -40,7 +40,7 @@ class CharactersService{
      * - Los que NO tienen descripción se ordenan descendentemente por su id.
      */
     //common
-    private class CharacterComparator : Comparator<Character> {
+    class CharacterComparator : Comparator<Character> {
         override fun compare(c1: Character, c2: Character): Int {
             if (c1.description.isEmpty() && c2.description.isEmpty()) {
                 return c2.id.compareTo(c1.id)

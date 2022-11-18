@@ -28,7 +28,6 @@ kotlin {
             dependencies {
                 //Kotlin Serialization
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.0")
-                implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0")
 
                 //Ktor
                 implementation("io.ktor:ktor-client-core:$ktorVersion")
@@ -43,10 +42,10 @@ kotlin {
                 implementation("com.squareup.okio:okio:3.1.0")
 
                 //Corrutinas
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2-native-mt"){
-                    version{
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4"){
+                    /*version{
                         strictly("1.5.2-native-mt")
-                    }
+                    }*/
                 }
 
                 //Enlace Serialization-Ktor
@@ -65,7 +64,11 @@ kotlin {
                 implementation("io.ktor:ktor-client-okhttp:$ktorVersion")
             }
         }
-        val androidTest by getting
+        val androidTest by getting{
+            dependencies {
+                implementation(kotlin("test"))
+            }
+        }
         val iosX64Main by getting
         val iosArm64Main by getting
         val iosSimulatorArm64Main by getting
